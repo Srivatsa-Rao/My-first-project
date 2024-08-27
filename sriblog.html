@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>TravelwithSri.Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        header {
+            background-color: rgb(35, 53, 53);
+            padding: 15px 0;
+            color: cornsilk;
+        }
+
+        .header-content {
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+        }
+
+        h1{
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-weight: bold;
+        }
+
+        #hero {
+
+            background-position: center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: whitesmoke;
+            border-top: 1px solid;
+
+        }
+
+        #hero-content {
+            padding: 20px;
+            background-color:rgba(0, 0, 0, 0.5);
+        }
+
+        video { 
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            position:absolute;
+            background-color:rgb(171, 170, 170);
+        }
+
+        /* .below { 
+            padding-top: 200px;
+        }*/
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background-color: rgb(199, 77, 44);
+            color: floralwhite;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .hero-button:hover {
+            background-color: rgb(148, 56, 30);
+        }
+
+        footer {
+            text-align: center;
+            color: cornsilk;
+            background-color: rgb(35, 53, 53);
+            padding: 20px;
+        }
+        
+        #Adventures {
+            background-color: rgb(236, 233, 233);
+            padding: 20px;
+            text-align: left;
+            font-size:medium;
+        }
+        #Adventures h2{
+            color: darkblue;
+            margin-bottom: 15px;
+        }
+        #Adventures ul{
+            list-style-type: square;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        #Adventures li{
+            margin-bottom: 10px;
+        }
+        #About{
+            padding: 20px;
+            text-align: left;
+            background-color: rgb(214, 209, 209) ;
+            font-weight: 600;
+        }
+        #About h2{
+            margin-bottom: 15px;
+            color: rgb(104, 60, 146);
+        }
+        #contact{
+            background-color:rgb(236, 233, 233);
+            text-align: left;
+            padding: 20px;
+        }
+        #contact p{
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        #contact h2{
+            color: rgb(26, 107, 187);
+        margin-bottom: 15px;
+        }
+        /* hover effect  */
+        #Adventures li:hover, #contact p:hover{
+            color: blue;
+        }
+        /* responsive setting */
+        @media screen and (max-width:768px){
+            #Adventures,#About,#contact{
+                text-align: center;
+            }
+        }
+        @media  screen and (min-width:768px){
+            #Adventures,#About,#contact{
+               text-align: center;
+            }
+        }
+       #Adventures li{
+        list-style-type: none;
+        padding: 0;
+       }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Sri's Adventure Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="#Adventures">Adventure plans</a></li>
+                    <li><a href="#About">About Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+    </header>
+    <video type="mp4" autoplay loop>
+        <source src="/video/travel1.mp4">
+    </video>
+    <section id="hero">
+        <div id="hero-content">
+           
+            <h2>Welcome to my Blog</h2>
+            <p>Explore my Adventures</p>
+            <a href="./Adventure.html" class="hero-button">click here</a>
+        </div>
+    </section>
+    
+        <section id="Adventures">
+            <h2>Motive and Milestones</h2>
+            <p>My motive is to explore the nature.</p><p>some of major destinations</p>
+            <ul>
+                <li>Ujjain</li>
+                <li>Sanchi Stupa</li>
+                <li>Gateway of Mumbai</li>
+            </ul>
+        </section>
+        <!-- upcoming adventures will be added here -->
+        <section id="About">
+            <h2>About</h2>
+            <p>I am hobbie Traveller, in hunt of new places. <br>Always welcome to join me in new expeditions. <br>
+                contact
+                me for travel tips and plans</p>
+
+        </section>
+        <!-- more about me, add here-->
+        <section id="contact">
+            <h2>contact details</h2>
+            <p>Phone.no: **********</p>
+            <p>E-mail: abc98@gmail.com</p>
+            <p>check my page for travel detail- <button onclick></button>Adventure.Blog</a></p>
+        </section>
+   
+    <!-- addiontal contacts add here -->
+    <footer>@2024TravelwithSri-blog.All rights preserved</footer>
+</body>
+
+</html>

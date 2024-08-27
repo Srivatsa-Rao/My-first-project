@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA Vice City Style Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url(..//image/image2/pokemon/pokiiiiiiiiiiii.jpg);
+        
+        }
+        /* canvas {
+            display:inline-block;
+            background: #635d5d;
+        background-image: url(..//image/image2/pokemon/pokiiiiiiiiiiii.jpg);
+        
+        } */
+    </style>
+</head>
+<body>
+    
+    <canvas id="gameCanvas" style="height: max-content; width: max-width">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </canvas>
+
+    
+
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const keys = {};
+
+        class Player {
+            constructor() {
+                this.width = 100;
+                this.height = 50;
+                this.x = canvas.width / 2 - this.width / 2;
+                this.y = canvas.height / 2 - this.height / 2;
+                this.speed = 12;
+                this.angle = 0;
+                
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x + this.width / 2, this.y + this.height / 2);
+                ctx.rotate(this.angle);
+                ctx.fillStyle = 'red';
+                ctx.fillRect(-this.width / 2, -this.height / 2, this.width, this.height);
+                ctx.restore();
+
+            }
+
+            update() {
+                if (keys['ArrowUp']) {
+                    this.x += Math.cos(this.angle) * this.speed;
+                    this.y += Math.sin(this.angle) * this.speed;
+                }
+                if (keys['ArrowDown']) {
+                    this.x -= Math.cos(this.angle) * this.speed;
+                    this.y -= Math.sin(this.angle) * this.speed;
+                }
+                if (keys['ArrowLeft']) {
+                    this.angle -= 0.25;
+                }
+                if (keys['ArrowRight']) {
+                    this.angle += 0.25;
+                }
+
+                // Boundary checks
+                if (this.x < 0) this.x = 0;
+                if (this.y < 0) this.y = 0;
+                if (this.x + this.width > canvas.width) this.x = canvas.width - this.width;
+                if (this.y + this.height > canvas.height) this.y = canvas.height - this.height;
+
+                this.draw();
+            }
+        }
+
+        const player = new Player();
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            player.update();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('keydown', (e) => {
+            keys[e.key] = true;
+        });
+
+        window.addEventListener('keyup', (e) => {
+            keys[e.key] = false;
+        });
+    </script>
+</body>
+</html>
